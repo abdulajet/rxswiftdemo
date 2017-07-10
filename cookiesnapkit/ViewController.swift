@@ -7,19 +7,38 @@
 //
 
 import UIKit
+import SnapKit
+import RxSwift
 
 class ViewController: UIViewController {
-
+	
+	let cookie = UIButton(type: UIButtonType.system)
+	let label = UILabel()
+	var counter = Variable(0)
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do any additional setup after loading the view, typically from a nib.
+		let superview = self.view!
+		
+		view.backgroundColor = UIColor.gray
+		
+		cookie.backgroundColor = UIColor.brown
+		cookie.setTitle(".", for: .normal)
+		superview.addSubview(cookie)
+		
+		cookie.snp.makeConstraints { (make) in
+			make.width.equalTo(50)
+			make.height.equalTo(50)
+			make.center.equalTo(superview)
+		}
+		
+		cookie.addTarget(self, action: #selector(buttonClicked), for: .touchUpInside)
+		
 	}
-
-	override func didReceiveMemoryWarning() {
-		super.didReceiveMemoryWarning()
-		// Dispose of any resources that can be recreated.
+	
+	func buttonClicked(){
+		counter.value = counter.value + 1
+		print(counter.value)
 	}
-
-
 }
 
