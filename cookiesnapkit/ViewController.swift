@@ -15,6 +15,7 @@ class ViewController: UIViewController {
 	let cookie = UIButton(type: UIButtonType.system)
 	let label = UILabel()
 	var counter = Variable(0)
+	let disposeBag = DisposeBag()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -45,8 +46,7 @@ class ViewController: UIViewController {
 		
 		counter.asObservable().subscribe{event in
 			self.label.text = String(self.counter.value)
-			
-		}
+		}.addDisposableTo(disposeBag)
 		
 	}
 	
