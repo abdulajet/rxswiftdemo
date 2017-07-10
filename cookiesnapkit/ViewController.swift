@@ -34,11 +34,24 @@ class ViewController: UIViewController {
 		
 		cookie.addTarget(self, action: #selector(buttonClicked), for: .touchUpInside)
 		
+		label.textColor = UIColor.red
+		label.text = "0"
+		superview.addSubview(label)
+		
+		label.snp.makeConstraints { (make) in
+			make.bottom.equalTo(superview.snp.bottom).offset(-50)
+			make.centerX.equalTo(superview.snp.centerX)
+		}
+		
+		counter.asObservable().subscribe{event in
+			self.label.text = String(self.counter.value)
+			
+		}
+		
 	}
 	
 	func buttonClicked(){
 		counter.value = counter.value + 1
-		print(counter.value)
 	}
 }
 
