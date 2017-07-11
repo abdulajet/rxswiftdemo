@@ -8,5 +8,4 @@ target 'cookiesnapkit' do
   # Pods for cookiesnapkit
   pod "SnapKit"
   pod "RxSwift"
-  pod "RxCocoa"
 end
