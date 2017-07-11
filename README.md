@@ -1,6 +1,6 @@
 # RxSwift demo 
 
-A simple cookie clicker demo to demonstate reactive programming in Swift using RxSwift and SnapKit. 
+A simple cookie clicker demo to demonstrate reactive programming in Swift using RxSwift and SnapKit. 
 
 ## Getting started
 
