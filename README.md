@@ -4,11 +4,11 @@ A simple cookie clicker demo to demonstate reactive programming in Swift using R
 
 ## Getting started
 
-You're going to need Node.js and npm installed, as well as hardware support for Bluetooth Low Energy. You also need some beacons which you know (or can find out) the hardware address of.
+You're going to need xCode and CocoaPods installed.
 
 First up, clone or download this repo and CD into the directory then install the pods:
 
 ```bash
 $ pod install
 ```
-Open the app from rxswiftdemo.xcworkspace
+Open the app from cookiesnapkit.xcworkspace
